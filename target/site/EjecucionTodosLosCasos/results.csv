@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Ingresar al portal web de Guru99 Demo Site y buscar vuelos diligenciando todos los datos requeridos","diligenciando todos los datos requeridos y buscar vuelos","SUCCESS","2021-12-27T10:54:03.983-05:00[America/Bogota]","0.0","33.5"
+"Ingresar al portal web de Guru99 Demo Site y realizar el registro de usuarios","seleccionar la opcion elements web tables y agregar un nuevo registro","SUCCESS","2021-12-27T11:02:11.07-05:00[America/Bogota]","0.0","77.46"
+"Ingresar al portal web de Guru99 Demo Site y validar la fecha de la pagina con la fecha del sistema","validar la fecha de la pagina con la fecha del sistema","FAILURE","2021-12-27T11:00:07.94-05:00[America/Bogota]","0.0","14.87"

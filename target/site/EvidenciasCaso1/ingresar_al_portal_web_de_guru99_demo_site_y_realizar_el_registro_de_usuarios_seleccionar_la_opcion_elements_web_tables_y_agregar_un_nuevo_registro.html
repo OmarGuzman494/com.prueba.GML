@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>seleccionar la opcion elements web tables y agregar un nuevo registro</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<!-- ImgPreview -->
+<script src="scripts/imgpreview.full.jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="results-page">
+
+
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">prueba - GML</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs">
+            <a href="index.html" class="breadcrumbs">Home</a>
+
+            > <a href="feature_ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios.html">Ingresar Al Portal Web De Guru99 Demo Site Y Realizar El Registro De Usuarios</a>
+        > seleccionar la opcion elements web tables y agregar un nuevo registro
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 24-12-2021 11:32</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                                <div>
+                                    <h3 class="discreet-story-header">
+                                        <i class="fa fa-2x fa-comments-o"></i>
+                                        <span class="story-header-title">Ingresar Al Portal Web De Guru99 Demo Site Y Realizar El Registro De Usuarios </span>
+                                    </h3>
+
+                                </div>
+
+                        </td>
+                        <td valign="top">
+                                <p class="tag">
+                                    <span class="badge tag-badge" style="background:default;">
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;"
+                                                                      href="tag_registrousuarios.html">Registro Usuarios
+                                    (tag)</a>
+                                </span>
+                                </p>
+                                <p class="tag">
+                                    <span class="badge tag-badge" style="background:default;">
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;"
+                                                                      href="tag_agregarnuevousuario.html">Agregar Nuevo Usuario
+                                    (tag)</a>
+                                </span>
+                                </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">
+                                    seleccionar la opcion elements web tables y agregar un nuevo registro
+                                        <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+        <div class="story-title">
+            <h3 class="story-header">Scenario Outline</h3>
+
+            <div class="scenario">Given ingresar al portal web demo guru99 "&lt;url&gt;"<br>And ingresar a la pestana Register<br>When diligenciar informacion de contacto "&lt;txtFirstName&gt;", "&lt;txtLasttName&gt;", "&lt;txtPhone&gt;","&lt;txtEmail&gt;"<br>And diligenciar informacion de mail "&lt;txtAddress&gt;", "&lt;txtCity&gt;", "&lt;txtState&gt;", "&lt;txtPostalCode&gt;", "&lt;txtCountry&gt;"<br>And diligenciar información del usuario "&lt;txtUserName&gt;", "&lt;txtPassword&gt;","&lt;txtConfirmPassword&gt;",<br>And enviar informacion<br>Then Verificar el registro de usuario "&lt;txtUserName&gt;"<br>And Salir de la pagina</div>
+
+        </div>
+
+    <div id="beforetable"></div>
+
+
+            <h3 class="story-header">Examples:&nbsp;</h3>
+                <div class="requirementNarrative"></div>
+
+
+                <p class="example-tag">
+                </p>
+
+            <div class="example-table test-report">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                            <th>Url</th>
+                            <th>Txt First Name</th>
+                            <th>Txt Lastt Name</th>
+                            <th>Txt Phone</th>
+                            <th>Txt Email</th>
+                            <th>Txt Address</th>
+                            <th>Txt City</th>
+                            <th>Txt State</th>
+                            <th>Txt Postal Code</th>
+                            <th>Txt Country</th>
+                            <th>Txt User Name</th>
+                            <th>Txt Password</th>
+                            <th>Txt Confirm Password</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="test-SUCCESS"><a href="#0">1</a></td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">http://demo.guru99.com/test/newtours/</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Wilson</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Zastoque</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">3114459568</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">wzastoque@gmail.com</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Calle 5 18 - 32</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Bogota</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Cundinamarca</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">50001</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">COLOMBIA</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Wzastoque</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Zasroque123*</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#0">Zasroque123*</a>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="test-SUCCESS"><a href="#1">2</a></td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">http://demo.guru99.com/test/newtours/</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Ivana</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Zarate</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">3174526589</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">izarate@gmail.com</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Carrera 80 Bis 49 - 21</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Cancum</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Jalisco</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">127005</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">MEXICO</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Izarate</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Zarate321+</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#1">Zarate321+</a>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="test-SUCCESS"><a href="#2">3</a></td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">http://demo.guru99.com/test/newtours/</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Luz Dary</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Cabezas</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">3214562587</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">ldcabezas@gmail.com</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Avda Quito 92 -27</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Rosario</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Corrientes</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">000125</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">ARGENTINA</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">ldcabezas</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Cabezas456/</a>
+                                </td>
+                                <td class="test-SUCCESS"><a
+                                            href="#2">Cabezas456/</a>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    <div id="tablecontents">
+        <div>
+            <table class="step-table">
+                <tr class="step-titles">
+                    <th width="65">
+                    </th>
+                    <th class="step-description-column greentext">
+                        Steps
+                    </th>
+
+                        <th width="150" class="greentext">Screenshots</th>
+                    <th width="130" class="greentext">Outcome</th>
+                    <th width="100" class="greentext"><i title="Duration" class="far fa-clock"></i></th>
+                </tr>
+                <tr class="step-table-separator">
+                    <td colspan="5"></td>
+                </tr>
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection0 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Example: {url=http://demo.guru99.com/test/newtours/, txtFirstName=Wilson, txtLasttName=Zastoque, txtPhone=3114459568, txtEmail=wzastoque@gmail.com, txtAddress=Calle 5 18 - 32, txtCity=Bogota, txtState=Cundinamarca, txtPostalCode=50001, txtCountry=COLOMBIA, txtUserName=Wzastoque, txtPassword=Zasroque123*, txtConfirmPassword=Zasroque123*}
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=0">
+                                        <img src="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             href="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=6">
+                                        <img src="fac09b0f6f85e82da7c2a767def47d374eb34038b1d748f693e70c57d5615794.png"
+                                             href="fac09b0f6f85e82da7c2a767def47d374eb34038b1d748f693e70c57d5615794.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">25.54s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Given ingresar al portal web demo guru99 "http://demo.guru99.com/test/newtours/"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">9.98s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-1"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And ingresar a la pestana Register
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=1">
+                                        <img src="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             href="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">1.02s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-2"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When diligenciar informacion de contacto "Wilson", "Zastoque", "3114459568","wzastoque@gmail.com"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=2">
+                                        <img src="1ff7cefcefc4fdfee24a2844f52bd663dd96874fa5553f08eeb0f767449f6a0f.png"
+                                             href="1ff7cefcefc4fdfee24a2844f52bd663dd96874fa5553f08eeb0f767449f6a0f.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">4.93s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-3"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar informacion de mail "Calle 5 18 - 32", "Bogota", "Cundinamarca", "50001", "COLOMBIA"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=3">
+                                        <img src="6c8800135be22060f70e9ee61ef27b090691131898275300281924f7330eaca0.png"
+                                             href="6c8800135be22060f70e9ee61ef27b090691131898275300281924f7330eaca0.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">4.67s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-4"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar información del usuario "Wzastoque", "Zasroque123*","Zasroque123*",
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=4">
+                                        <img src="9ab5bd4f32fbf7d415742ef2e4d0296999116b85d5f41f14a5c35b154fb6a0a6.png"
+                                             href="9ab5bd4f32fbf7d415742ef2e4d0296999116b85d5f41f14a5c35b154fb6a0a6.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">3.13s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-5"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And enviar informacion
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=5">
+                                        <img src="56bda9353e04a7507332d2b839498f13fba204bce89579329957922207c584c8.png"
+                                             href="56bda9353e04a7507332d2b839498f13fba204bce89579329957922207c584c8.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.52s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-6"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then Verificar el registro de usuario "Wzastoque"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=6">
+                                        <img src="fac09b0f6f85e82da7c2a767def47d374eb34038b1d748f693e70c57d5615794.png"
+                                             href="fac09b0f6f85e82da7c2a767def47d374eb34038b1d748f693e70c57d5615794.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">1.23s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-7"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And Salir de la pagina
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.01s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="1"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection1 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Example: {url=http://demo.guru99.com/test/newtours/, txtFirstName=Ivana, txtLasttName=Zarate, txtPhone=3174526589, txtEmail=izarate@gmail.com, txtAddress=Carrera 80 Bis 49 - 21, txtCity=Cancum, txtState=Jalisco, txtPostalCode=127005, txtCountry=MEXICO, txtUserName=Izarate, txtPassword=Zarate321+, txtConfirmPassword=Zarate321+}
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=7">
+                                        <img src="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             href="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=14">
+                                        <img src="56e5b7c7508c6cad7237fb98ffd567e109d8561593e1512e59099cf8b60f2fac.png"
+                                             href="56e5b7c7508c6cad7237fb98ffd567e109d8561593e1512e59099cf8b60f2fac.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">24.58s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection1" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Given ingresar al portal web demo guru99 "http://demo.guru99.com/test/newtours/"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=8">
+                                        <img src="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             href="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">9.35s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-1"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And ingresar a la pestana Register
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=9">
+                                        <img src="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             href="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.7s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-2"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When diligenciar informacion de contacto "Ivana", "Zarate", "3174526589","izarate@gmail.com"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=10">
+                                        <img src="57abfc28077714d362fe6d22227953c9ee16068287def5e2f5738f7698075e72.png"
+                                             href="57abfc28077714d362fe6d22227953c9ee16068287def5e2f5738f7698075e72.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">4.67s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-3"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar informacion de mail "Carrera 80 Bis 49 - 21", "Cancum", "Jalisco", "127005", "MEXICO"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=11">
+                                        <img src="5760462fdbabe9279ac22dd89ec7a757e2fd0b0be380457c131ca743c14124d5.png"
+                                             href="5760462fdbabe9279ac22dd89ec7a757e2fd0b0be380457c131ca743c14124d5.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">4.83s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-4"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar información del usuario "Izarate", "Zarate321+","Zarate321+",
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=12">
+                                        <img src="b98e8403b6df25ad5fdb900f9111efa51fae99b3a694173d357c2d805477ee5b.png"
+                                             href="b98e8403b6df25ad5fdb900f9111efa51fae99b3a694173d357c2d805477ee5b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">2.95s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-5"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And enviar informacion
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=13">
+                                        <img src="346a828bfc45b6280c0d39c8cfc41615c20b7be3418414c177cac2879f6e4997.png"
+                                             href="346a828bfc45b6280c0d39c8cfc41615c20b7be3418414c177cac2879f6e4997.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.64s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-6"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then Verificar el registro de usuario "Izarate"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=14">
+                                        <img src="56e5b7c7508c6cad7237fb98ffd567e109d8561593e1512e59099cf8b60f2fac.png"
+                                             href="56e5b7c7508c6cad7237fb98ffd567e109d8561593e1512e59099cf8b60f2fac.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">1.41s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-7"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And Salir de la pagina
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="2"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection2 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Example: {url=http://demo.guru99.com/test/newtours/, txtFirstName=Luz Dary, txtLasttName=Cabezas, txtPhone=3214562587, txtEmail=ldcabezas@gmail.com, txtAddress=Avda Quito 92 -27, txtCity=Rosario, txtState=Corrientes, txtPostalCode=000125, txtCountry=ARGENTINA, txtUserName=ldcabezas, txtPassword=Cabezas456/, txtConfirmPassword=Cabezas456/}
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=15">
+                                        <img src="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             href="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=22">
+                                        <img src="decda32014a964c5627569967417e6f46a25f390f73e9b0219a218190fd9748c.png"
+                                             href="decda32014a964c5627569967417e6f46a25f390f73e9b0219a218190fd9748c.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">24.12s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection2" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Given ingresar al portal web demo guru99 "http://demo.guru99.com/test/newtours/"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=16">
+                                        <img src="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             href="3537a8b5a7872e30eabb16259bfec914cdf409d4adbf30d042a6e77740612c9e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">8.2s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-1"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And ingresar a la pestana Register
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=17">
+                                        <img src="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             href="bd8f8a1b1e11042caf1c98325a63ed5fc9e2e0c8622fcd73683bf104552c5e22.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.92s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-2"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When diligenciar informacion de contacto "Luz Dary", "Cabezas", "3214562587","ldcabezas@gmail.com"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=18">
+                                        <img src="9d367f2547138fa9c551c0e9bd1171cd4a98e6e913b3ebbad59873ae72f692e4.png"
+                                             href="9d367f2547138fa9c551c0e9bd1171cd4a98e6e913b3ebbad59873ae72f692e4.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">4.72s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-3"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar informacion de mail "Avda Quito 92 -27", "Rosario", "Corrientes", "000125", "ARGENTINA"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=19">
+                                        <img src="df971cb6a64c0a33beb1b443e11606414dfc3fd6c68e7dbabbab5430bcab8653.png"
+                                             href="df971cb6a64c0a33beb1b443e11606414dfc3fd6c68e7dbabbab5430bcab8653.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">5.21s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-4"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And diligenciar información del usuario "ldcabezas", "Cabezas456/","Cabezas456/",
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=20">
+                                        <img src="f238c3a69eab549c2e6e42af6cf2a4185ab5b06aece12372d3f8be0fa804f596.png"
+                                             href="f238c3a69eab549c2e6e42af6cf2a4185ab5b06aece12372d3f8be0fa804f596.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">2.92s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-5"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And enviar informacion
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=21">
+                                        <img src="b191d8d10448b7c47627150cd97e4e2ba5b7b30cbddd240a461b51993e1d60f9.png"
+                                             href="b191d8d10448b7c47627150cd97e4e2ba5b7b30cbddd240a461b51993e1d60f9.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.69s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-6"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then Verificar el registro de usuario "ldcabezas"
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="ingresar_al_portal_web_de_guru99_demo_site_y_realizar_el_registro_de_usuarios_seleccionar_la_opcion_elements_web_tables_y_agregar_un_nuevo_registro_screenshots.html#screenshots?screenshot=22">
+                                        <img src="decda32014a964c5627569967417e6f46a25f390f73e9b0219a218190fd9748c.png"
+                                             href="decda32014a964c5627569967417e6f46a25f390f73e9b0219a218190fd9748c.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">1.4s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="2-7"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                And Salir de la pagina
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.01s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                <tr class="test-SUCCESS">
+                        <td colspan="3"></td>
+                    <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>76.75s</em></span></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div id="beforefooter"></div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="version">Serenity BDD version 2.3.12</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function toggleDiv(divId) {
+            $("#" + divId).toggle();
+            var imgsrc = $(".img" + divId).attr('src');
+            if (imgsrc == 'images/plus.png') {
+                $(".img" + divId).attr("src", function () {
+                    return "images/minus.png";
+                });
+
+            } else {
+                $(".img" + divId).attr("src", function () {
+                    return "images/plus.png";
+                });
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+
+        $(document).ready(function () {
+            $('img.screenshot').imgPreview({
+                imgCSS: {
+                    width: '500px'
+                },
+                distanceFromCursor: {top: 10, left: -200}
+            });
+        });
+
+        //]]>
+    </script>
+    <div id="imgPreviewContainer" style="position: absolute; top: 612px; left: 355px; display: none; " class=""><img
+                src="" style="display: none; "></div>
+    <div id="imgPreviewContainer2" style="position: absolute; top: 925px; left: 320px; display: none; " class="">
+        <img style="width: 200px; display: none; " src=""></div>
+    <div id="imgPreviewWithStyles" style="position: absolute; top: 1272px; left: 321px; display: none; " class="">
+        <img style="height: 200px; opacity: 1; display: none; " src=""></div>
+    <div id="imgPreviewWithStyles2" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+    <div id="imgPreviewWithStyles3" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+
+</div>
+</body>
+</html>

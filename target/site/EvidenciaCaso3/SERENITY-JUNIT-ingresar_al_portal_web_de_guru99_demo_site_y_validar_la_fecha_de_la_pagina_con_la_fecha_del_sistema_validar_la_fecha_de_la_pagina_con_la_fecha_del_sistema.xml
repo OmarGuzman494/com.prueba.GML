@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Ingresar al portal web de Guru99 Demo Site y validar la fecha de la pagina con la fecha del sistema" skipped="0" tests="1" time="25.27" timestamp="2021-12-27 10:02:40"><testcase name="validar la fecha de la pagina con la fecha del sistema"><failure message="Hay diferencias entre la fecha de la pagina y la fecha actual,  La fecha de la pagina web es: Jul 6, 2017 y la fecha del sistema es Dic 27, 2021" type="java.lang.AssertionError">Hay diferencias entre la fecha de la pagina y la fecha actual,  La fecha de la pagina web es: Jul 6, 2017 y la fecha del sistema es Dic 27, 2021</failure><system-err>Hay diferencias entre la fecha de la pagina y la fecha actual,  La fecha de la pagina web es: Jul 6, 2017 y la fecha del sistema es Dic 27, 2021&#13;
+com.prueba.GML.steps.ValidarFechasSteps.comprarFechaPaginaSistema(ValidarFechasSteps.java:60)&#13;
+com.prueba.GML.definition.ValidarFechasDefinition.comparar_fecha_pagina_con_fecha_sistema(ValidarFechasDefinition.java:28)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:63)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:49)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:99)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:71)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:234)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:57)&#13;
+runners.RunnerValidarFechas.subRunner(RunnerValidarFechas.java:21)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+</system-err></testcase></testsuite>
